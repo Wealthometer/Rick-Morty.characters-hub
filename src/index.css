@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 95 60% 55%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 20% 8%;
+
+    --muted: 220 20% 18%; 
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 320 80% 60%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 95 60% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom Rick and Morty colors */
+    --portal-green: 95 60% 55%;
+    --portal-glow: 95 80% 60%;
+    --space-dark: 220 25% 6%;
+    --space-mid: 220 25% 12%;
+    --electric-cyan: 190 100% 50%;
+    --neon-pink: 320 80% 60%;
+    --status-alive: 142 76% 45%;
+    --status-dead: 0 72% 51%;
+    --status-unknown: 220 10% 50%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 95 60% 55%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 95 60% 55%;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 180 100% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 180 100% 95%;
+
+    --primary: 95 60% 55%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 220 20% 8%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 320 80% 60%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 95 60% 55%;
+
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 180 100% 95%;
+    --sidebar-primary: 95 60% 55%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 220 20% 20%;
+    --sidebar-ring: 95 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Creepster', cursive;
+  }
+}
+
+@layer utilities {
+  .font-creepster {
+    font-family: 'Creepster', cursive;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--portal-green)), 0 0 20px hsl(var(--portal-green) / 0.5);
+  }
+
+  .portal-glow {
+    box-shadow: 0 0 20px hsl(var(--portal-green) / 0.4), 0 0 40px hsl(var(--portal-green) / 0.2);
+  }
+
+  .card-glow {
+    box-shadow: 0 4px 20px hsl(var(--space-dark) / 0.8), 0 0 1px hsl(var(--portal-green) / 0.3);
+  }
+
+  .status-alive {
+    background-color: hsl(var(--status-alive));
+    box-shadow: 0 0 8px hsl(var(--status-alive) / 0.6);
+  }
+
+  .status-dead {
+    background-color: hsl(var(--status-dead));
+    box-shadow: 0 0 8px hsl(var(--status-dead) / 0.6);
+  }
+
+  .status-unknown {
+    background-color: hsl(var(--status-unknown));
+    box-shadow: 0 0 8px hsl(var(--status-unknown) / 0.6);
+  }
+
+  .gradient-portal {
+    background: radial-gradient(ellipse at center, hsl(var(--portal-green)) 0%, hsl(var(--electric-cyan)) 50%, transparent 70%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--space-dark));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--portal-green) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--portal-green) / 0.7);
+}
